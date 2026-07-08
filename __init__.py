@@ -27,7 +27,7 @@ import bpy
 bl_info = {
     "name": "Quake and Hexen II MDL format",
     "author": "Bill Currie, Victor Feitosa",
-    "blender": (2, 80, 0),
+    "blender": (4, 0, 0),
     "version": (1, 0, 0),
     "api": 35622,
     "location": "File > Import-Export",
@@ -40,11 +40,11 @@ bl_info = {
 # To support reload properly, try to access a package var, if it's there,
 # reload everything
 if "bpy" in locals():
-    import imp
+    import importlib
     if "import_mdl" in locals():
-        imp.reload(import_mdl)
+        importlib.reload(import_mdl)
     if "export_mdl" in locals():
-        imp.reload(export_mdl)
+        importlib.reload(export_mdl)
 
 
 SYNCTYPE = (
